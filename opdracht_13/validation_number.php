@@ -1,8 +1,8 @@
 <?php
 
-declare(strict_types=1);
 
-function controleerAantal(mixed $aantal): void
+
+function controleerAantal(mixed $aantal):   void
 {
     if (is_numeric($aantal)) {
         echo "Waarde: {$aantal} -> Correct ingevoerd." . PHP_EOL;
