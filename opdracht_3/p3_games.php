@@ -4,21 +4,20 @@ $host = "localhost";
 $dbname = "p3_games";
 $username = "root";
 $password = "";
+$games = [];
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
 
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Query
     $stmt = $pdo->prepare("SELECT * FROM games");
     $stmt->execute();
 
-    // associative array
     $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 } catch(PDOException $e) {
-    echo "Database fout: " . $e->getMessage();
+    $dbError = "Database fout: " . $e->getMessage();
 }
 
 ?>
@@ -32,7 +31,11 @@ try {
 
 <h1>Games lijst</h1>
 
-<?php if(count($games) > 0): ?>
+<?php if (isset($dbError)): ?>
+
+<p><?php echo htmlspecialchars($dbError); ?></p>
+
+<?php elseif(count($games) > 0): ?>
 
 <ul>
 

@@ -1,26 +1,10 @@
 <?php
-
-
-$appNaam = "ChessMate";
-$trackerType = "chess game tracking";
-$tagline = "Follow your chess games and improve your play with ChessMate!";
+$pageTitle = "ChessMate";
+include "includes/header.php";
+include "includes/nav.php";
 ?>
 
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-    <meta charset="UTF-8">
-    <title><?= $appNaam ?></title>
-</head>
-<body>
+<h1>Welkom bij ChessMate</h1>
+<p>Ga naar Home of Toevoegen via de navigatie.</p>
 
-    <h1>Hi, welcome to <?= $appNaam ?></h1>
-    <p>This is your <?= $trackerType ?> app.</p>
-    <p><em><?= $tagline ?></em></p>
-
-    <footer>
-        <p>&copy; <?= date("Y") ?> <?= $appNaam ?></p>
-    </footer>
-
-</body>
-</html>
+<?php include "includes/footer.php"; ?>

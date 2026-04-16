@@ -21,6 +21,6 @@ $titel = $_GET['titel'] ?? '';
 	<pre><?php print_r($_GET); ?></pre>
 
 	<h2>Titel</h2>
-	<p><?php echo htmlspecialchars($titel, ENT_QUOTES, 'UTF-8'); ?></p>
+	<p><?php echo $titel; ?></p>
 </body>
 </html>
